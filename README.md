@@ -1,4 +1,4 @@
-# Semantic Kernel Python LangChain Agent Flow
+# Semantic Kernel Agent Flow
 
 This project demonstrates a two-step agent flow using Azure OpenAI's ChatCompletions API. It features a researcher agent that gathers information on a given topic and a writer agent that synthesizes the research into an article.
 
@@ -33,5 +33,5 @@ This project demonstrates a two-step agent flow using Azure OpenAI's ChatComplet
 ## Usage
 Run the main script and enter a topic when prompted:
 ```bash
-python langchain_flow.py
+python agentic_flow.py
 ```
