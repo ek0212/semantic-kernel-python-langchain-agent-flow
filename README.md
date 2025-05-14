@@ -1,16 +1,19 @@
-# Semantic Kernel Agent Flow
+# Azure OpenAI Multi-Agent Research and Writing Flow
 
-This project demonstrates a two-step agent flow using Azure OpenAI's ChatCompletions API. It features a researcher agent that gathers information on a given topic and a writer agent that synthesizes the research into an article.
+This project implements a collaborative AI agent system using Azure OpenAI's ChatCompletions API. The system consists of two specialized agents working in sequence:
+1. A Research Agent that collects and analyzes information on a given topic
+2. A Writing Agent that transforms the research findings into a coherent article
 
 ## Tools and Frameworks Used
-- **Azure OpenAI Service**: Provides access to powerful language models via Azure's cloud platform.
-- **azure-ai-inference**: Python SDK for interacting with Azure AI models, specifically used for chat completions in this project.
-- **dotenv**: Loads environment variables from a `.env` file for secure and convenient configuration management.
-- **Python Standard Library**: Used for environment variable access and basic scripting.
+- **Azure OpenAI Service**: Powers the AI agents through Azure's managed API endpoints
+- **azure-ai-inference**: Azure's Python SDK for making API calls to OpenAI models
+- **python-dotenv**: Manages environment variables for secure configuration
+- **Python Standard Library**: Handles core functionality and environment setup
 
 ## Requirements
-- Python 3.8+
-- Azure OpenAI resource and deployment
+- Python 3.8 or newer
+- Active Azure OpenAI resource with model deployment
+- API access credentials
 
 ## Setup
 1. Clone the repository.
@@ -25,13 +28,16 @@ This project demonstrates a two-step agent flow using Azure OpenAI's ChatComplet
    AZURE_OPENAI_MODEL=<your-deployment-name>
    AZURE_OPENAI_API_VERSION=<api-version>
    ```
-   - `AZURE_OPENAI_ENDPOINT`: e.g. `https://<resource-name>.openai.azure.com/`
-   - `AZURE_OPENAI_KEY`: your Azure OpenAI API key
-   - `AZURE_OPENAI_MODEL`: your model deployment name
-   - `AZURE_OPENAI_API_VERSION`: e.g. `2024-05-01-preview`
+   - `AZURE_OPENAI_ENDPOINT`: Your Azure OpenAI service endpoint (e.g., `https://<resource-name>.openai.azure.com/`)
+   - `AZURE_OPENAI_KEY`: Your Azure OpenAI API key
+   - `AZURE_OPENAI_MODEL`: The deployment name of your model
+   - `AZURE_OPENAI_API_VERSION`: API version (e.g., `2024-05-01-preview`)
 
 ## Usage
-Run the main script and enter a topic when prompted:
+Execute the main script to start the agent flow:
 ```bash
 python agentic_flow.py
 ```
+The script will prompt you for a research topic and then:
+1. Activate the Research Agent to gather information
+2. Pass findings to the Writing Agent for article creation
